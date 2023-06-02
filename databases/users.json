@@ -1,0 +1,19 @@
+[
+  {
+    "id": "8e452bcf-16b0-4ea7-a037-4999c2496a46",
+    "username": "palanchi",
+    "password": "$2b$12$zoQeA.25uGYsc9R9dlM7iOEMzulYD1a0TaJ3kNk.bL20lZ07QhOaq",
+    "phone_number": "998996389899"
+  },
+  {
+    "id": "0beaf9c1-b0e4-47de-becf-74788600067b",
+    "username": "rozimat2",
+    "password": "$2b$12$uQeLqkfq89fEBpEQdiKVSO4MoUPdixDTwuKzzfA76Q9G5eGKgVUWe"
+  },
+  {
+    "id": "eab8af49-c7c9-4dc6-ad75-d7624ccdf20d",
+    "username": "rozimat",
+    "password": "$2b$12$bpLE4rBRrlZwQl9TylhTJuw7b9GBbYjgpaFV/EQFWZ7y3sHrzgBpK",
+    "phone_number": "2475030"
+  }
+]
