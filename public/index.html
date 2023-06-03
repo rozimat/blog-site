@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+  <form>
+    <textarea style="resize: none;" id="txtArea"></textarea>
+    <button id="btn">Submit</button>
+  </form>
+
+</body>
+<script type="module">
+  import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
+  const socket = io('http://localhost:2222');
+
+ 
+  //fetch bn bervoriladigan post id
+  const post_id = "3f26e477-f763-4a43-868a-4560e8056e64"
+
+  const textarea = document.querySelector("#txtArea");
+  const submitBtn = document.querySelector('#btn');
+  
+
+
+  submitBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    let comment = textarea.value;
+    if(! comment){ return }
+    postCommend(comment);
+  
+  })
+  
+  let date = new Date()
+  function postCommend(comment){
+    const data ={
+      date: date,
+      comment: comment,
+      post_id: post_id,
+      user_id: socket.id,
+    }
+    broadcaseComment(data);
+  }
+  
+  function broadcaseComment(data){
+    //socket
+    socket.emit("comment", data);
+    console.log(data);
+  } 
+
+  //hammaga ko'rinadi
+  socket.on("comment", (data)=>{
+    console.log(data);
+  })
+
+</script>
+
+</html>

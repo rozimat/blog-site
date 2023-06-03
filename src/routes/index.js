@@ -5,6 +5,8 @@ const likesAndDislikes = require('./class.routes');
 const home = require('./home.routes');
 const viewCounter = require('./views.routes')
 
+
+
 module.exports = [ 
   home,
   auth,
@@ -12,5 +14,7 @@ module.exports = [
   posts,
   likesAndDislikes,
   viewCounter,
+
+
 
 ]
