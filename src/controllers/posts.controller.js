@@ -19,7 +19,7 @@ const posts = async(req,res)=> {
     const newImgName =` ${uuid()}.${img.mimetype.split("/")[1]}`;
     img.mv(`${process.cwd()}/uploads/${newImgName}`);
     const viewCounts = 0;
-    const newPost = new Post(post_id, user_id, newImgName, title, description, viewCounts)
+    const newPost = new Post(post_id, user_id, newImgName, title, description, viewCounts);
     const data = posts ? [...posts, newPost] : [newPost];
     Posts.write(data);
     res.status(201).json({ message: "successfully posted"})
@@ -95,5 +95,5 @@ module.exports = {
   posts,
   postsEdite,
   postsDelete,
-
+ 
 };
